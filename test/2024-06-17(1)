@@ -1,0 +1,18 @@
+class Solution {
+    fun solution(price: Int, money: Int, count: Int): Long {
+        var answer: Long = 0
+        var price2: Long = 0
+        
+        for (i in 1..count) {
+            price2 += price*i
+        }
+        
+        if (money < price2) {
+            answer = (money - price2) * -1
+        } else {
+            answer = 0
+        
+        }
+        return answer.toLong()
+    }
+}
