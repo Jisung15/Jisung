@@ -1,0 +1,25 @@
+class Solution {
+    fun solution(n: Int, m: Int): IntArray {
+        var answer = intArrayOf()
+        var answer2 = intArrayOf()
+        var answer3 = intArrayOf()
+        
+        for (i in 1..n) {
+            if (m % i == 0 && n % i == 0) {
+                answer2 += i
+                
+                answer3 += (m*n)/i
+            } else {
+                continue
+            }
+        }
+        
+        var result = answer2.sorted().toIntArray().last()
+        var result2 = answer3.sortedDescending().toIntArray().last()
+        
+        answer += result
+        answer += result2
+        
+        return answer
+    }
+}
