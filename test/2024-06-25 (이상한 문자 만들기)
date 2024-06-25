@@ -1,0 +1,21 @@
+class Solution {
+    fun solution(s: String): String {
+        var answer = ""
+        var num : Int = 0
+        
+        for (i in s) {
+            if (i == ' ') {
+                answer += ' '
+                num = 0            
+            } else { 
+                num ++
+                if (num % 2 != 0) {
+                    answer += i.toUpperCase() 
+                } else if (num % 2 == 0) {      
+                    answer += i.toLowerCase()
+                }
+            }
+        }
+        return answer.toString()
+    }
+}
