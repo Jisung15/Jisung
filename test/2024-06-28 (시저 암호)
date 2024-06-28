@@ -3,7 +3,7 @@ class Solution {
         var answer = ""
         var answer2 = IntArray(s.length)
         
-        for (i in s.indices) {
+        for (i in s.indices){
             
             if (s[i].toInt() in 97..122) {
                 
@@ -13,11 +13,7 @@ class Solution {
                 
                 answer2[i] = (s[i].toInt() + n - 65) % 26 + 65
                 
-            } else {
-                
-                answer2[i] += s[i].toInt() + n
-                
-            }
+            } 
             
             if (s[i] != ' '){
                 answer += answer2[i].toChar()
