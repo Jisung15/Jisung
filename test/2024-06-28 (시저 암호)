@@ -1,0 +1,31 @@
+class Solution {
+    fun solution(s: String, n: Int): String {
+        var answer = ""
+        var answer2 = IntArray(s.length)
+        
+        for (i in s.indices) {
+            
+            if (s[i].toInt() in 97..122) {
+                
+                answer2[i] = (s[i].toInt() + n - 97) % 26 + 97
+                
+            } else if (s[i].toInt() in 65..90) {
+                
+                answer2[i] = (s[i].toInt() + n - 65) % 26 + 65
+                
+            } else {
+                
+                answer2[i] += s[i].toInt() + n
+                
+            }
+            
+            if (s[i] != ' '){
+                answer += answer2[i].toChar()
+            } else {
+                answer += ' '
+            }
+        }
+        
+        return answer
+    }   
+} 
