@@ -1,0 +1,33 @@
+class Solution {
+    fun solution(s: String): Int {
+        var answer: String = ""
+        var answer2: String = ""
+        
+        val num = listOf("zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine")
+        
+        for (i in 0 .. s.length - 1) {
+            if (s[i] in '0'..'9') {
+                answer += s[i]
+            } else if (s[i] in 'a'..'z') {
+                answer2 += s[i]
+                if (answer2 in num) {
+                    when (answer2) {
+                        "zero" -> answer += 0
+                        "one" -> answer += 1
+                        "two" -> answer += 2
+                        "three" -> answer += 3
+                        "four" -> answer += 4
+                        "five" -> answer += 5
+                        "six" -> answer += 6
+                        "seven" -> answer += 7
+                        "eight" -> answer += 8
+                        "nine" -> answer += 9
+                    }
+                    answer2 = ""
+                }
+            }
+        }
+        
+        return answer.toInt()
+    }
+}
