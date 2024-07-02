@@ -19,7 +19,7 @@ class Solution {
         
         val result = answer2.maxOrNull()?: 0   // 가로 길이 집합 중 모든 명함이 들어갈려면 가장 큰 크기여야 함
         
-        var result2 = answer3.maxOrNull()?: 0  // 세로 길이 역시 가장 큰 크기여야 함
+        val result2 = answer3.maxOrNull()?: 0  // 세로 길이 역시 가장 큰 크기여야 함
         
         answer = result * result2           // 두 개를 곱해서 최종 지갑 크기를 구함
         
