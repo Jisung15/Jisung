@@ -1,0 +1,24 @@
+class Solution {
+    fun solution(strings: Array<String>, n: Int): Array<String> {
+        var answer = arrayOf<String>()
+        var answer2 = arrayOf<String>()
+        
+        strings.sort()
+        
+        for (i in strings) {
+            answer2 += i[n].toString()
+        }
+        
+        answer2.sort()
+        
+        for (i in answer2) {
+            for (j in strings) {
+                if (j[n].toString() == i) answer += j
+            }
+        }
+        
+        answer = strings.sortedWith(compareBy{ it[n] }).toTypedArray()
+        
+        return answer
+    }
+}
