@@ -1,0 +1,24 @@
+class Solution {
+    fun solution(array: IntArray, commands: Array<IntArray>): IntArray {
+        var answer = intArrayOf()
+        
+        for (i in commands) {
+            val answer2 = i[0]
+            val answer3 = i[1]
+            val answer4 = i[2]
+        
+//            println(answer2)
+//            println(answer3)
+//            println(answer4)
+
+            val slice = array.sliceArray(answer2-1 until answer3)
+            slice.sort()
+            
+            val result = slice[answer4-1]
+
+            answer += result
+        }
+        
+        return answer
+    }
+}
