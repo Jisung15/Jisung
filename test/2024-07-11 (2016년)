@@ -1,0 +1,20 @@
+class Solution {
+    fun solution(a: Int, b: Int): String {
+        var answer = ""
+        val one = listOf<String>("THU", "FRI", "SAT", "SUN", "MON", "TUE", "WED")
+        val two = listOf<Int>(31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31)
+        var day : Int = 0
+        
+        for (i in 0 until a-1) {
+            day += two[i]
+        }
+        
+        day += b
+        
+        answer = one[day % 7]
+        
+//        println("2016년 ${a}월 ${b}일의 요일은 ${answer}입니다.")
+        
+        return answer
+    }
+}
