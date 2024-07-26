@@ -1,0 +1,17 @@
+class Solution {
+    fun solution(cards1: Array<String>, cards2: Array<String>, goal: Array<String>): String {
+        var index = 0
+        var index1 = 0
+
+        for(i in goal) {
+            when {
+                index < cards1.size && cards1[index] == i -> index++
+                index1 < cards2.size && cards2[index1] == i -> index1++
+                else -> return "No"
+                
+            }
+        }
+        
+        return "Yes"
+    }
+}
